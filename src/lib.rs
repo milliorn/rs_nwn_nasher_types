@@ -129,28 +129,32 @@ impl NwType {
         }
     }
 }
-
 /// Represents a named value in the Neverwinter Nights module file format.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NwValue<T> {
+    /// Represents the type of the value
     #[serde(rename = "type")]
-    pub _type: String, // Represents the type of the value
+    pub _type: String,
 
+    // The actual value of type T
     #[serde(rename = "value")]
-    pub value: T, // The actual value of type T
+    pub value: T,
 }
 
 /// Represents a structured value in the Neverwinter Nights module file format.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NwStruct<T> {
+    /// Struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
-    pub struct_id: Option<u32>, // Optional struct ID
+    pub struct_id: Option<u32>,
 
+    /// Represents the type of the structured value
     #[serde(rename = "type")]
-    pub _type: String, // Represents the type of the structured value
+    pub _type: String,
 
+    /// The actual value of type T representing the structured value
     #[serde(rename = "value")]
-    pub value: T, // The actual value of type T representing the structured value
+    pub value: T,
 }
 
 /// A struct that represents a localized string.
