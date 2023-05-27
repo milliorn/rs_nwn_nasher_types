@@ -377,15 +377,19 @@ pub struct EncounterCreature {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct EncounterGeometry {
+    // The unique identifier for the struct
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
+    // The X coordinate of the geometry
     #[serde(skip_serializing_if = "Option::is_none", rename = "X")]
     pub x: Option<NwValue<Decimal>>,
 
+    // The Y coordinate of the geometry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Y")]
     pub y: Option<NwValue<Decimal>>,
 
+    // The Z coordinate of the geometry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Z")]
     pub z: Option<NwValue<Decimal>>,
 }
