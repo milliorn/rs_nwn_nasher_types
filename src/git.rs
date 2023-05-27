@@ -668,18 +668,23 @@ pub struct TriggerGeometry {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SpawnPoint {
+    // Optional identifier for the structure (serialized as "__struct_id")
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
+    // Optional orientation of the spawn point (serialized as "Orientation")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Orientation")]
     pub orientation: Option<NwValue<Decimal>>,
 
+    // Optional X-coordinate of the spawn point (serialized as "X")
     #[serde(skip_serializing_if = "Option::is_none", rename = "X")]
     pub x: Option<NwValue<Decimal>>,
 
+    // Optional Y-coordinate of the spawn point (serialized as "Y")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Y")]
     pub y: Option<NwValue<Decimal>>,
 
+    // Optional Z-coordinate of the spawn point (serialized as "Z")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Z")]
     pub z: Option<NwValue<Decimal>>,
 }
