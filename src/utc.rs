@@ -241,8 +241,11 @@ pub struct Item {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct EquippedItem {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Resource reference for the equipped item (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "EquippedRes")]
     pub res_ref: Option<NwValue<String>>,
 }
