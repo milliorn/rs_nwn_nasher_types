@@ -393,7 +393,7 @@ pub struct Feat {
 
     /// Feat value
     #[serde(skip_serializing_if = "Option::is_none", rename = "Feat")]
-    pub feat: Option<NwValue<i32>>,
+    pub feat: Option<NwValue<u32>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
