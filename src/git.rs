@@ -321,84 +321,111 @@ pub struct Door {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Encounter {
+    // Represents the struct ID of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
+    // Represents whether the object is active
     #[serde(skip_serializing_if = "Option::is_none", rename = "Active")]
     pub active: Option<NwValue<u8>>,
 
+    // Represents a comment associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
 
+    // Represents a list of creatures associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "CreatureList")]
     pub creature_list: Option<NwValue<Vec<EncounterCreature>>>,
 
+    // Represents the difficulty level of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Difficulty")]
     pub difficulty: Option<NwValue<u8>>,
 
+    // Represents the difficulty index of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "DifficultyIndex")]
     pub difficulty_index: Option<NwValue<u8>>,
 
+    // Represents the faction ID associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Faction")]
     pub faction: Option<NwValue<u32>>,
 
+    // Represents the geometry information associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Geometry")]
     pub geometry: Option<NwValue<Vec<EncounterGeometry>>>,
 
+    // Represents the localized name of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "LocalizedName")]
     pub localized_name: Option<NwValue<LocalizedText>>,
 
+    // Represents the maximum number of creatures associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "MaxCreatures")]
     pub max_creatures: Option<NwValue<u8>>,
 
+    // Represents the script to execute when entering the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnEntered")]
     pub on_entered: Option<NwValue<String>>,
 
+    // Represents the script to execute when the object is exhausted
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnExhausted")]
     pub on_exhausted: Option<NwValue<String>>,
 
+    // Represents the script to execute when exiting the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnExit")]
     pub on_exit: Option<NwValue<String>>,
 
+    // Represents the script to execute on the object's heartbeat
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnHeartbeat")]
     pub on_heartbeat: Option<NwValue<String>>,
 
+    // Represents the user-defined script associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnUserDefined")]
     pub on_user_defined: Option<NwValue<String>>,
 
+    // Represents whether the object is accessible only by players
     #[serde(skip_serializing_if = "Option::is_none", rename = "PlayerOnly")]
     pub player_only: Option<NwValue<u8>>,
 
+    // Represents the recommended number of creatures for the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "RecCreatures")]
     pub rec_creatures: Option<NwValue<u8>>,
 
+    // Represents whether the object is resettable
     #[serde(skip_serializing_if = "Option::is_none", rename = "Reset")]
     pub reset: Option<NwValue<u8>>,
 
+    // Represents the reset time of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "ResetTime")]
     pub reset_time: Option<NwValue<u32>>,
 
+    // Represents the number of times the object respawns
     #[serde(skip_serializing_if = "Option::is_none", rename = "Respawns")]
     pub respawns: Option<NwValue<i8>>,
 
+    // Represents the spawn option for the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "SpawnOption")]
     pub spawn_option: Option<NwValue<u8>>,
 
+    // Represents the list of spawn points associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "SpawnPointList")]
     pub spawn_point_list: Option<NwValue<Vec<SpawnPoint>>>,
 
+    // Represents the tag associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Tag")]
     pub tag: Option<NwValue<String>>,
 
+    // Represents the template resource reference of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "TemplateResRef")]
     pub template_res_ref: Option<NwValue<String>>,
 
+    // Represents the X position of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "XPosition")]
     pub x_position: Option<NwValue<Decimal>>,
 
+    // Represents the Y position of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "YPosition")]
     pub y_position: Option<NwValue<Decimal>>,
 
+    // Represents the Z position of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "ZPosition")]
     pub z_position: Option<NwValue<Decimal>>,
 }
