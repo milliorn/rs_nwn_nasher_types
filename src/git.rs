@@ -98,168 +98,223 @@ pub struct Creature {}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Door {
+    // The unique identifier for the door
     #[serde(rename = "__struct_id")]
     pub struct_id: u32,
 
+    // The animation state of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "AnimationState")]
     pub animation_state: Option<NwValue<u8>>,
 
+    // The appearance of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Appearance")]
     pub appearance: Option<NwValue<u32>>,
 
+    // The auto-remove key of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "AutoRemoveKey")]
     pub auto_remove_key: Option<NwValue<u8>>,
 
+    // The bearing of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Bearing")]
     pub bearing: Option<NwValue<Decimal>>,
 
+    // The close lock DC of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "CloseLockDC")]
     pub close_lock_dc: Option<NwValue<u8>>,
 
+    // The comment of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
 
+    // The conversation of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Conversation")]
     pub conversation: Option<NwValue<String>>,
 
+    // The current HP (hit points) of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "CurrentHP")]
     pub current_hp: Option<NwValue<u16>>,
 
+    // The description of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Description")]
     pub description: Option<NwValue<LocalizedText>>,
 
+    // The disarm DC of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "DisarmDC")]
     pub disarm_dc: Option<NwValue<u8>>,
 
+    // The faction of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Faction")]
     pub faction: Option<NwValue<u32>>,
 
+    // The fortitude of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Fort")]
     pub fortitude: Option<NwValue<u8>>,
 
+    // The generic type (new) of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "GenericType_New")]
     pub generic_type_new: Option<NwValue<u8>>,
 
+    // The hardness of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "Hardness")]
     pub hardness: Option<NwValue<u8>>,
 
+    // The HP (hit points) of the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "HP")]
     pub hp: Option<NwValue<u16>>,
 
+    // Represents whether the door can be interrupted
     #[serde(skip_serializing_if = "Option::is_none", rename = "Interruptable")]
     pub interuptable: Option<NwValue<u8>>,
 
+    // Represents the name of the key required to open the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "KeyName")]
     pub key_name: Option<NwValue<String>>,
 
+    // Represents whether a key is required to open the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "KeyRequired")]
     pub key_required: Option<NwValue<u8>>,
 
+    // Represents the door linked to this one
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkedTo")]
     pub linked_to: Option<NwValue<String>>,
 
+    // Represents the flags associated with the linked door
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkedToFlags")]
     pub linked_to_flags: Option<NwValue<u8>>,
 
+    // Represents the ID of the load screen associated with the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "LoadScreenID")]
     pub load_screen_id: Option<NwValue<u16>>,
 
+    // Represents whether the door is lockable
     #[serde(skip_serializing_if = "Option::is_none", rename = "Lockable")]
     pub lockable: Option<NwValue<u8>>,
 
+    // Represents whether the door is locked
     #[serde(skip_serializing_if = "Option::is_none", rename = "Locked")]
     pub locked: Option<NwValue<u8>>,
 
+    // Represents the localized name of the door's location
     #[serde(skip_serializing_if = "Option::is_none", rename = "LocName")]
     pub location_name: Option<NwValue<LocalizedText>>,
 
+    // Represents the action to perform when the door is clicked
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnClick")]
     pub on_click: Option<NwValue<String>>,
 
+    // Represents the action to perform when the door is closed
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnClosed")]
     pub on_closed: Option<NwValue<String>>,
 
+    // Represents the action to perform when the door is damaged
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnDamaged")]
     pub on_damaged: Option<NwValue<String>>,
 
+    // Represents the action to perform when the door is destroyed
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnDeath")]
     pub on_death: Option<NwValue<String>>,
 
+    // Represents the action to perform when the door is disarmed
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnDisarm")]
     pub on_disarm: Option<NwValue<String>>,
 
+    // Represents the action to perform when failed to open the door
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnFailToOpen")]
     pub on_fail_to_open: Option<NwValue<String>>,
 
+    // Represents the action to perform on door heartbeat
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnHeartbeat")]
     pub on_heartbeat: Option<NwValue<String>>,
 
+    // Represents the action to perform when the door is locked
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnLock")]
     pub on_lock: Option<NwValue<String>>,
 
+    // Represents the action to perform when the object is melee attacked
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnMeleeAttacked")]
     pub on_melee_attacked: Option<NwValue<String>>,
 
+    // Represents the action to perform when the object is opened
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnOpen")]
     pub on_open: Option<NwValue<String>>,
 
+    // Represents the action to perform when a spell is cast at the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnSpellCastAt")]
     pub on_spell_cast_at: Option<NwValue<String>>,
 
+    // Represents the action to perform when the trap associated with the object is triggered
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnTrapTriggered")]
     pub on_trap_triggered: Option<NwValue<String>>,
 
+    // Represents the action to perform when the object is unlocked
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnUnlock")]
     pub on_unlock: Option<NwValue<String>>,
 
+    // Represents the action to perform as defined by the user
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnUserDefined")]
     pub on_user_defined: Option<NwValue<String>>,
 
+    // Represents the difficulty class (DC) to open a lock on the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "OpenLockDC")]
     pub open_lock_dc: Option<NwValue<u8>>,
 
+    // Represents the plot associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Plot")]
     pub plot: Option<NwValue<u8>>,
 
+    // Represents the ID of the portrait associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "PortraitId")]
     pub portrait_id: Option<NwValue<u16>>,
 
+    // Represents the reference ID of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Ref")]
     pub ref_: Option<NwValue<u32>>,
 
+    // Represents the tag of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Tag")]
     pub tag: Option<NwValue<String>>,
 
+    // Represents the template resource reference associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "TemplateResRef")]
     pub template_res_ref: Option<NwValue<String>>,
 
+    // Represents whether the trap associated with the object is detectable
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapDetectable")]
     pub trap_detectable: Option<NwValue<u8>>,
 
+    // Represents the difficulty class (DC) to detect the trap associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapDetectDC")]
     pub trap_detect_dc: Option<NwValue<u8>>,
 
+    // Represents whether the trap associated with the object is disarmable
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapDisarmable")]
     pub trap_disarmable: Option<NwValue<u8>>,
 
+    // Represents the flag associated with the trap
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapFlag")]
     pub trap_flag: Option<NwValue<u8>>,
 
+    // Represents whether the trap associated with the object is a one-shot trap
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapOneShot")]
     pub trap_one_shot: Option<NwValue<u8>>,
 
+    // Represents the type of trap associated with the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapType")]
     pub trap_type: Option<NwValue<u8>>,
 
+    // Represents the will attribute of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Will")]
     pub will: Option<NwValue<u8>>,
 
+    // Represents the x-coordinate of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "X")]
     pub x: Option<NwValue<Decimal>>,
 
+    // Represents the y-coordinate of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Y")]
     pub y: Option<NwValue<Decimal>>,
 
+    // Represents the z-coordinate of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Z")]
     pub z: Option<NwValue<Decimal>>,
 }
