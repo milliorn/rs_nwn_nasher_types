@@ -8,66 +8,86 @@ use super::*;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Git {
+    // Area properties (serialized as "AreaProperties")
     #[serde(rename = "AreaProperties")]
     pub area_properties: NwStruct<AreaProperty>,
 
+    // Optional list of creatures (serialized as "Creature List")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Creature List")]
     pub creature_list: Option<NwValue<Vec<Creature>>>,
 
+    // Optional list of doors (serialized as "Door List")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Door List")]
     pub door_list: Option<NwValue<Vec<Door>>>,
 
+    // Optional list of encounters (serialized as "Encounter List")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Encounter List")]
     pub encounter_list: Option<NwValue<Vec<Encounter>>>,
 
+    // Optional list (serialized as "List")
     #[serde(skip_serializing_if = "Option::is_none", rename = "List")]
     pub list: Option<NwValue<Vec<List>>>,
 
+    // Optional list of placeables (serialized as "Placeable List")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Placeable List")]
     pub placeable_list: Option<NwValue<Vec<Placeable>>>,
 
+    // Optional list of sounds (serialized as "SoundList")
     #[serde(skip_serializing_if = "Option::is_none", rename = "SoundList")]
     pub sound_list: Option<NwValue<Vec<Sound>>>,
 
+    // Optional list of stores (serialized as "StoreList")
     #[serde(skip_serializing_if = "Option::is_none", rename = "StoreList")]
     pub store_list: Option<NwValue<Vec<Store>>>,
 
+    // Optional list of triggers (serialized as "TriggerList")
     #[serde(skip_serializing_if = "Option::is_none", rename = "TriggerList")]
     pub trigger_list: Option<NwValue<Vec<Trigger>>>,
 
+    // Optional list of waypoints (serialized as "WaypointList")
     #[serde(skip_serializing_if = "Option::is_none", rename = "WaypointList")]
     pub waypoint_list: Option<NwValue<Vec<Waypoint>>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AreaProperty {
+    // Unique identifier for the struct (serialized as "__struct_id")
     #[serde(rename = "__struct_id")]
     pub struct_id: u32,
 
+    // Optional daytime ambient sound (serialized as "AmbientSndDay")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndDay")]
     pub ambient_snd_day: Option<NwValue<u32>>,
 
+    // Optional volume for daytime ambient sound (serialized as "AmbientSndDayVol")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndDayVol")]
     pub ambient_snd_day_vol: Option<NwValue<u32>>,
 
+    // Optional nighttime ambient sound (serialized as "AmbientSndNight")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndNight")]
     pub ambient_snd_night: Option<NwValue<u32>>,
 
+    // Optional volume for nighttime ambient sound (serialized as "AmbientSndNitVol")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndNitVol")]
     pub ambient_snd_nit_vol: Option<NwValue<u32>>,
 
+    // Optional environmental audio (serialized as "EnvAudio")
     #[serde(skip_serializing_if = "Option::is_none", rename = "EnvAudio")]
     pub env_audio: Option<NwValue<u32>>,
 
+    // Optional battle music (serialized as "MusicBattle")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicBattle")]
     pub music_battle: Option<NwValue<u32>>,
 
+    // Optional daytime music (serialized as "MusicDay")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicDay")]
     pub music_day: Option<NwValue<u32>>,
 
+    // Optional music delay (serialized as "MusicDelay")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicDelay")]
     pub music_delay: Option<NwValue<u32>>,
 
+    // Optional nighttime music (serialized as "MusicNight")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicNight")]
     pub music_night: Option<NwValue<u32>>,
 }
