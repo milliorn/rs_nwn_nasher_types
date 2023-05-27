@@ -203,12 +203,19 @@ pub struct Class {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct MemorizedSpell {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Spell value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Spell")]
     pub spell: Option<NwValue<i32>>,
+
+    /// Spell flags (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "SpellFlags")]
     pub flags: Option<NwValue<i32>>,
+
+    /// Spell meta-magic value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "SpellMetaMagic")]
     pub meta_magic: Option<NwValue<i32>>,
 }
