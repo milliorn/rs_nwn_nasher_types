@@ -106,6 +106,7 @@ impl NwType {
         serde_json::from_str(s)
     }
 
+    /// Returns a string representing the type of the `NwType` variant.
     pub fn get_type(&self) -> String {
         match self {
             NwType::Area(_) => "ARE".to_string(),
@@ -129,22 +130,27 @@ impl NwType {
     }
 }
 
+/// Represents a named value in the Neverwinter Nights module file format.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NwValue<T> {
     #[serde(rename = "type")]
-    pub _type: String,
+    pub _type: String, // Represents the type of the value
+
     #[serde(rename = "value")]
-    pub value: T,
+    pub value: T, // The actual value of type T
 }
 
+/// Represents a structured value in the Neverwinter Nights module file format.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NwStruct<T> {
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
-    pub struct_id: Option<u32>,
+    pub struct_id: Option<u32>, // Optional struct ID
+
     #[serde(rename = "type")]
-    pub _type: String,
+    pub _type: String, // Represents the type of the structured value
+
     #[serde(rename = "value")]
-    pub value: T,
+    pub value: T, // The actual value of type T representing the structured value
 }
 
 /// A struct that represents a localized string.
@@ -154,16 +160,22 @@ pub struct NwStruct<T> {
 pub struct LocalizedText {
     #[serde(skip_serializing_if = "Option::is_none", rename = "0")]
     pub english: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none", rename = "1")]
     pub french: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none", rename = "2")]
     pub german: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none", rename = "3")]
     pub italian: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none", rename = "4")]
     pub spanish: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none", rename = "5")]
     pub polish: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none", rename = "id")]
     pub id: Option<u32>,
 }
