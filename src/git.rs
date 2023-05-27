@@ -653,15 +653,19 @@ pub struct Trigger {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct TriggerGeometry {
+    // Optional identifier for the structure (serialized as "__struct_id")
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
+    // Optional X-coordinate of the trigger geometry point (serialized as "PointX")
     #[serde(skip_serializing_if = "Option::is_none", rename = "PointX")]
     pub x: Option<NwValue<Decimal>>,
 
+    // Optional Y-coordinate of the trigger geometry point (serialized as "PointY")
     #[serde(skip_serializing_if = "Option::is_none", rename = "PointY")]
     pub y: Option<NwValue<Decimal>>,
 
+    // Optional Z-coordinate of the trigger geometry point (serialized as "PointZ")
     #[serde(skip_serializing_if = "Option::is_none", rename = "PointZ")]
     pub z: Option<NwValue<Decimal>>,
 }
