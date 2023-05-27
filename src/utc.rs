@@ -222,12 +222,19 @@ pub struct MemorizedSpell {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Item {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Resource reference for the inventory item (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "InventoryRes")]
     pub res_ref: Option<NwValue<String>>,
+
+    /// X-coordinate for the position in the repository (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Repos_PosX")]
     pub repos_pos_x: Option<NwValue<i32>>,
+
+    /// Y-coordinate for the position in the repository (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Repos_Posy")]
     pub repos_pos_y: Option<NwValue<i32>>,
 }
