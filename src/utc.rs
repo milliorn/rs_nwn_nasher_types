@@ -263,20 +263,31 @@ pub struct Feat {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Skill {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Skill rank value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Rank")]
     pub rank: Option<NwValue<u32>>,
+    // Add more fields and comments as needed
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SpecialAbility {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Spell value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Spell")]
     pub spell: Option<NwValue<i32>>,
+
+    /// Spell caster level value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "SpellCasterLevel")]
     pub caster_level: Option<NwValue<i32>>,
+
+    /// Spell flags value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "SpellFlags")]
     pub flags: Option<NwValue<i32>>,
 }
