@@ -252,10 +252,13 @@ pub struct EquippedItem {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Feat {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Feat value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Feat")]
-    pub feat: Option<NwValue<u32>>,
+    pub feat: Option<NwValue<i32>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
