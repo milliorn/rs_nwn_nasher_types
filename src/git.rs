@@ -715,111 +715,145 @@ pub struct Sound {}
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Store {}
 
-// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Trigger {
+    // The unique identifier for the struct
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
+    // Indicates whether the key should be automatically removed
     #[serde(skip_serializing_if = "Option::is_none", rename = "AutoRemoveKey")]
     pub auto_remove_key: Option<NwValue<u8>>,
 
+    // The cursor value associated with the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "Cursor")]
     pub cursor: Option<NwValue<u8>>,
 
+    // The disarm difficulty class (DC) of the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "DisarmDC")]
     pub disarm_dc: Option<NwValue<u8>>,
 
+    // The faction associated with the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "Faction")]
     pub faction: Option<NwValue<u32>>,
 
+    // The geometry information of the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "Geometry")]
     pub geometry: Option<NwValue<Vec<TriggerGeometry>>>,
 
+    // The height at which the trigger should be highlighted
     #[serde(skip_serializing_if = "Option::is_none", rename = "HighlightHeight")]
     pub highlight_height: Option<NwValue<Decimal>>,
 
+    // The name of the key required to interact with the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "KeyName")]
     pub key_name: Option<NwValue<String>>,
 
+    // The tag of the trigger to which it is linked
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkedTo")]
     pub linked_to: Option<NwValue<String>>,
 
+    // The flags associated with the trigger's linked object
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkedToFlags")]
     pub linked_to_flags: Option<NwValue<u8>>,
 
+    // The load screen ID associated with the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "LoadScreenID")]
     pub load_screen_id: Option<NwValue<u16>>,
 
+    // The localized name of the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "LocalizedName")]
     pub localized_name: Option<NwValue<LocalizedText>>,
 
+    // The script to execute when the trigger is clicked
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnClick")]
     pub on_click: Option<NwValue<String>>,
 
+    // The script to execute when the trigger is disarmed
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnDisarm")]
     pub on_disarm: Option<NwValue<String>>,
 
+    // The script to execute when the trigger is triggered as a trap
     #[serde(skip_serializing_if = "Option::is_none", rename = "OnTrapTriggered")]
     pub on_trap_triggered: Option<NwValue<String>>,
 
+    // The portrait ID associated with the trigger
     #[serde(skip_serializing_if = "Option::is_none", rename = "PortraitId")]
     pub portrait_id: Option<NwValue<u16>>,
 
+    // The script to execute during the trigger's heartbeat
     #[serde(skip_serializing_if = "Option::is_none", rename = "ScriptHeartbeat")]
     pub script_heartbeat: Option<NwValue<String>>,
 
+    // Script to execute when entering the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "ScriptOnEnter")]
     pub script_on_enter: Option<NwValue<String>>,
 
+    // Script to execute when exiting the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "ScriptOnExit")]
     pub script_on_exit: Option<NwValue<String>>,
 
+    // User-defined script
     #[serde(skip_serializing_if = "Option::is_none", rename = "ScriptUserDefine")]
     pub script_user_define: Option<NwValue<String>>,
 
+    // Tag of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Tag")]
     pub tag: Option<NwValue<String>>,
 
+    // Template resource reference
     #[serde(skip_serializing_if = "Option::is_none", rename = "TemplateResRef")]
     pub template_res_ref: Option<NwValue<String>>,
 
+    // Flag indicating whether the trap is detectable
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapDetectable")]
     pub trap_detectable: Option<NwValue<u8>>,
 
+    // Trap detection DC (Difficulty Class)
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapDetectDC")]
     pub trap_detect_dc: Option<NwValue<u8>>,
 
+    // Flag indicating whether the trap is disarmable
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapDisarmable")]
     pub trap_disarmable: Option<NwValue<u8>>,
 
+    // Trap flag
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapFlag")]
     pub trap_flag: Option<NwValue<u8>>,
 
+    // Flag indicating whether the trap is one-shot
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapOneShot")]
     pub trap_one_shot: Option<NwValue<u8>>,
 
+    // Type of trap
     #[serde(skip_serializing_if = "Option::is_none", rename = "TrapType")]
     pub trap_type: Option<NwValue<u8>>,
 
+    // Type of the object
     #[serde(skip_serializing_if = "Option::is_none", rename = "Type")]
     pub _type: Option<NwValue<u8>>,
 
+    // Orientation on the X-axis
     #[serde(skip_serializing_if = "Option::is_none", rename = "XOrientation")]
     pub x_orientation: Option<NwValue<Decimal>>,
 
+    // Position on the X-axis
     #[serde(skip_serializing_if = "Option::is_none", rename = "XPosition")]
     pub x_position: Option<NwValue<Decimal>>,
 
+    // Orientation on the Y-axis
     #[serde(skip_serializing_if = "Option::is_none", rename = "YOrientation")]
     pub y_orientation: Option<NwValue<Decimal>>,
 
+    // Position on the Y-axis
     #[serde(skip_serializing_if = "Option::is_none", rename = "YPosition")]
     pub y_position: Option<NwValue<Decimal>>,
 
+    // Orientation on the Z-axis
     #[serde(skip_serializing_if = "Option::is_none", rename = "ZOrientation")]
     pub z_orientation: Option<NwValue<Decimal>>,
 
+    // Position on the Z-axis
     #[serde(skip_serializing_if = "Option::is_none", rename = "ZPosition")]
     pub z_position: Option<NwValue<Decimal>>,
 }
