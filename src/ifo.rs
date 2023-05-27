@@ -13,11 +13,11 @@ pub struct Ifo {
     #[serde(skip_serializing_if = "Option::is_none", rename = "Expansion_Pack")]
     pub expansion_pack: Option<NwValue<u8>>,
 
-    // List of mod areas
+    // List of module areas
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_Area_list")]
     pub mod_area_list: Option<NwValue<Vec<Area>>>,
 
-    // List of mod cache NSS (Neverwinter Script) files
+    // List of module cache NSS (Neverwinter Script) files
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_CacheNSSList")]
     pub mod_cache_nss_list: Option<NwValue<Vec<NSS>>>,
 
@@ -29,7 +29,7 @@ pub struct Ifo {
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_CustomTlk")]
     pub mod_custom_tlk: Option<NwValue<String>>,
 
-    // List of mod cut scenes
+    // List of module cut scenes
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_CutSceneList")]
     pub mod_cut_scene_list: Option<NwValue<Vec<CutScene>>>,
 
@@ -81,7 +81,7 @@ pub struct Ifo {
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_HakList")]
     pub mod_hak_list: Option<NwValue<Vec<Hak>>>,
 
-    // Flag indicating if the mod is a save game
+    // Flag indicating if the module is a save game
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_IsSaveGame")]
     pub mod_is_save_game: Option<NwValue<u8>>,
 
@@ -121,11 +121,11 @@ pub struct Ifo {
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_OnHeartbeat")]
     pub mod_on_heartbeat: Option<NwValue<String>>,
 
-    // module script triggered when the mod is loaded
+    // module script triggered when the module is loaded
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_OnModLoad")]
     pub mod_on_mod_load: Option<NwValue<String>>,
 
-    // module script triggered when the mod starts
+    // module script triggered when the module starts
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_OnModStart")]
     pub mod_on_mod_start: Option<NwValue<String>>,
 
