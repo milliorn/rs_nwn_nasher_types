@@ -57,39 +57,39 @@ pub struct AreaProperty {
     #[serde(rename = "__struct_id")]
     pub struct_id: u32,
 
-    /// Optional daytime ambient sound (serialized as "AmbientSndDay")
+    /// Daytime ambient sound (serialized as "AmbientSndDay")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndDay")]
     pub ambient_snd_day: Option<NwValue<u32>>,
 
-    /// Optional volume for daytime ambient sound (serialized as "AmbientSndDayVol")
+    /// Volume for daytime ambient sound (serialized as "AmbientSndDayVol")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndDayVol")]
     pub ambient_snd_day_vol: Option<NwValue<u32>>,
 
-    /// Optional nighttime ambient sound (serialized as "AmbientSndNight")
+    /// Nighttime ambient sound (serialized as "AmbientSndNight")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndNight")]
     pub ambient_snd_night: Option<NwValue<u32>>,
 
-    /// Optional volume for nighttime ambient sound (serialized as "AmbientSndNitVol")
+    /// Volume for nighttime ambient sound (serialized as "AmbientSndNitVol")
     #[serde(skip_serializing_if = "Option::is_none", rename = "AmbientSndNitVol")]
     pub ambient_snd_nit_vol: Option<NwValue<u32>>,
 
-    /// Optional environmental audio (serialized as "EnvAudio")
+    /// Environmental audio (serialized as "EnvAudio")
     #[serde(skip_serializing_if = "Option::is_none", rename = "EnvAudio")]
     pub env_audio: Option<NwValue<u32>>,
 
-    /// Optional battle music (serialized as "MusicBattle")
+    /// Battle music (serialized as "MusicBattle")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicBattle")]
     pub music_battle: Option<NwValue<u32>>,
 
-    /// Optional daytime music (serialized as "MusicDay")
+    /// Daytime music (serialized as "MusicDay")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicDay")]
     pub music_day: Option<NwValue<u32>>,
 
-    /// Optional music delay (serialized as "MusicDelay")
+    /// Music delay (serialized as "MusicDelay")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicDelay")]
     pub music_delay: Option<NwValue<u32>>,
 
-    /// Optional nighttime music (serialized as "MusicNight")
+    /// Nighttime music (serialized as "MusicNight")
     #[serde(skip_serializing_if = "Option::is_none", rename = "MusicNight")]
     pub music_night: Option<NwValue<u32>>,
 }
@@ -873,19 +873,19 @@ pub struct Trigger {
 /// Trigger geometry
 #[derive(Debug, Serialize, Deserialize)]
 pub struct TriggerGeometry {
-    /// Optional identifier for the structure (serialized as "__struct_id")
+    /// Identifier for the structure (serialized as "__struct_id")
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
-    /// Optional X-coordinate of the trigger geometry point (serialized as "PointX")
+    /// X-coordinate of the trigger geometry point (serialized as "PointX")
     #[serde(skip_serializing_if = "Option::is_none", rename = "PointX")]
     pub x: Option<NwValue<Decimal>>,
 
-    /// Optional Y-coordinate of the trigger geometry point (serialized as "PointY")
+    /// Y-coordinate of the trigger geometry point (serialized as "PointY")
     #[serde(skip_serializing_if = "Option::is_none", rename = "PointY")]
     pub y: Option<NwValue<Decimal>>,
 
-    /// Optional Z-coordinate of the trigger geometry point (serialized as "PointZ")
+    /// Z-coordinate of the trigger geometry point (serialized as "PointZ")
     #[serde(skip_serializing_if = "Option::is_none", rename = "PointZ")]
     pub z: Option<NwValue<Decimal>>,
 }
@@ -893,23 +893,23 @@ pub struct TriggerGeometry {
 /// Spawn point
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SpawnPoint {
-    /// Optional identifier for the structure (serialized as "__struct_id")
+    /// Identifier for the structure (serialized as "__struct_id")
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
-    /// Optional orientation of the spawn point (serialized as "Orientation")
+    /// Orientation of the spawn point (serialized as "Orientation")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Orientation")]
     pub orientation: Option<NwValue<Decimal>>,
 
-    /// Optional X-coordinate of the spawn point (serialized as "X")
+    /// X-coordinate of the spawn point (serialized as "X")
     #[serde(skip_serializing_if = "Option::is_none", rename = "X")]
     pub x: Option<NwValue<Decimal>>,
 
-    /// Optional Y-coordinate of the spawn point (serialized as "Y")
+    /// Y-coordinate of the spawn point (serialized as "Y")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Y")]
     pub y: Option<NwValue<Decimal>>,
 
-    /// Optional Z-coordinate of the spawn point (serialized as "Z")
+    /// Z-coordinate of the spawn point (serialized as "Z")
     #[serde(skip_serializing_if = "Option::is_none", rename = "Z")]
     pub z: Option<NwValue<Decimal>>,
 }

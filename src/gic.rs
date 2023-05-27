@@ -39,13 +39,13 @@ pub struct Gic {
 /// Represents a comment
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Comment {
-    /// Optional field representing the struct ID
+    /// Field representing the struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
-    /// Optional field representing the comment content
+    /// Field representing the comment content
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
-    /// Optional field indicating whether the comment can be played in the toolset
+    /// Field indicating whether the comment can be played in the toolset
     #[serde(skip_serializing_if = "Option::is_none", rename = "PlayInToolset")]
     pub play_in_toolset: Option<NwValue<u8>>,
 }

@@ -8,31 +8,31 @@ use super::*;
 /// Represents a dialog in the `dlg` file format.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Dlg {
-    /// Optional field representing the delay for the entry in milliseconds
+    /// Field representing the delay for the entry in milliseconds
     #[serde(skip_serializing_if = "Option::is_none", rename = "DelayEntry")]
     pub delay_entry: Option<NwValue<u32>>,
-    /// Optional field representing the delay for the reply in milliseconds
+    /// Field representing the delay for the reply in milliseconds
     #[serde(skip_serializing_if = "Option::is_none", rename = "DelayReply")]
     pub delay_reply: Option<NwValue<u32>>,
-    /// Optional field representing the script to execute when the conversation is aborted
+    /// Field representing the script to execute when the conversation is aborted
     #[serde(skip_serializing_if = "Option::is_none", rename = "EndConverAbort")]
     pub end_conver_abort: Option<NwValue<String>>,
-    /// Optional field representing the script to execute when the conversation ends
+    /// Field representing the script to execute when the conversation ends
     #[serde(skip_serializing_if = "Option::is_none", rename = "EndConversation")]
     pub end_conversation: Option<NwValue<String>>,
-    /// Optional field representing the list of entries in the conversation
+    /// Field representing the list of entries in the conversation
     #[serde(skip_serializing_if = "Option::is_none", rename = "EntryList")]
     pub entry_list: Option<NwValue<Vec<Entry>>>,
-    /// Optional field representing the number of words in the conversation
+    /// Field representing the number of words in the conversation
     #[serde(skip_serializing_if = "Option::is_none", rename = "NumWords")]
     pub num_words: Option<NwValue<u32>>,
-    /// Optional field indicating whether zooming in is prevented during the conversation
+    /// Field indicating whether zooming in is prevented during the conversation
     #[serde(skip_serializing_if = "Option::is_none", rename = "PreventZoomIn")]
     pub prevent_zoom_in: Option<NwValue<u8>>,
-    /// Optional field representing the list of reply entries in the conversation
+    /// Field representing the list of reply entries in the conversation
     #[serde(skip_serializing_if = "Option::is_none", rename = "ReplyList")]
     pub reply_list: Option<NwValue<Vec<ReplyEntry>>>,
-    /// Optional field representing the list of starting entries in the conversation
+    /// Field representing the list of starting entries in the conversation
     #[serde(skip_serializing_if = "Option::is_none", rename = "StartingList")]
     pub starting_list: Option<NwValue<Vec<StartingList>>>,
 }
@@ -40,43 +40,43 @@ pub struct Dlg {
 /// Represents a entry in the `dlg` file format.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Entry {
-    /// Optional field representing the struct ID of the entry
+    /// Field representing the struct ID of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
-    /// Optional field representing the animation of the entry
+    /// Field representing the animation of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Animation")]
     pub animation: Option<NwValue<u32>>,
-    /// Optional field representing the animation loop of the entry
+    /// Field representing the animation loop of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "AnimLoop")]
     pub anim_loop: Option<NwValue<u8>>,
-    /// Optional field representing the comment of the entry
+    /// Field representing the comment of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
-    /// Optional field representing the delay of the entry in milliseconds
+    /// Field representing the delay of the entry in milliseconds
     #[serde(skip_serializing_if = "Option::is_none", rename = "Delay")]
     pub delay: Option<NwValue<u32>>,
-    /// Optional field representing the quest associated with the entry
+    /// Field representing the quest associated with the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Quest")]
     pub quest: Option<NwValue<String>>,
-    /// Optional field representing the quest entry of the entry
+    /// Field representing the quest entry of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "QuestEntry")]
     pub quest_entry: Option<NwValue<u32>>,
-    /// Optional field representing the list of replies associated with the entry
+    /// Field representing the list of replies associated with the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "RepliesList")]
     pub replies_list: Option<NwValue<Vec<Reply>>>,
-    /// Optional field representing the list of entries associated with the entry
+    /// Field representing the list of entries associated with the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "EntriesList")]
     pub entries_list: Option<NwValue<Vec<EntryReply>>>,
-    /// Optional field representing the script to execute for the entry
+    /// Field representing the script to execute for the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Script")]
     pub script: Option<NwValue<String>>,
-    /// Optional field representing the sound associated with the entry
+    /// Field representing the sound associated with the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Sound")]
     pub sound: Option<NwValue<String>>,
-    /// Optional field representing the speaker of the entry
+    /// Field representing the speaker of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Speaker")]
     pub speaker: Option<NwValue<String>>,
-    /// Optional field representing the text of the entry
+    /// Field representing the text of the entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "Text")]
     pub text: Option<NwValue<super::LocalizedText>>,
 }
@@ -84,46 +84,46 @@ pub struct Entry {
 /// Represents a response.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ReplyEntry {
-    /// Optional field representing the struct ID
+    /// Field representing the struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
-    /// Optional field representing the animation
+    /// Field representing the animation
     #[serde(skip_serializing_if = "Option::is_none", rename = "Animation")]
     pub animation: Option<NwValue<u32>>,
-    /// Optional field representing the animation loop
+    /// Field representing the animation loop
     #[serde(skip_serializing_if = "Option::is_none", rename = "AnimLoop")]
     pub anim_loop: Option<NwValue<u8>>,
-    /// Optional field representing the comment
+    /// Field representing the comment
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
-    /// Optional field representing the delay
+    /// Field representing the delay
     #[serde(skip_serializing_if = "Option::is_none", rename = "Delay")]
     pub delay: Option<NwValue<u32>>,
-    /// Optional field representing the list of entry replies
+    /// Field representing the list of entry replies
     #[serde(skip_serializing_if = "Option::is_none", rename = "EntriesList")]
     pub entries_list: Option<NwValue<Vec<EntryReply>>>,
-    /// Optional field representing the quest
+    /// Field representing the quest
     #[serde(skip_serializing_if = "Option::is_none", rename = "Quest")]
     pub quest: Option<NwValue<String>>,
-    /// Optional field representing the quest entry
+    /// Field representing the quest entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "QuestEntry")]
     pub quest_entry: Option<NwValue<u32>>,
-    /// Optional field representing the list of replies
+    /// Field representing the list of replies
     #[serde(skip_serializing_if = "Option::is_none", rename = "RepliesList")]
     pub replies_list: Option<NwValue<Vec<Reply>>>,
-    /// Optional field representing the script
+    /// Field representing the script
     #[serde(skip_serializing_if = "Option::is_none", rename = "Script")]
     pub script: Option<NwValue<String>>,
-    /// Optional field representing the sound
+    /// Field representing the sound
     #[serde(skip_serializing_if = "Option::is_none", rename = "Sound")]
     pub sound: Option<NwValue<String>>,
-    /// Optional field representing the speaker
+    /// Field representing the speaker
     #[serde(skip_serializing_if = "Option::is_none", rename = "Speaker")]
     pub speaker: Option<NwValue<String>>,
-    /// Optional field representing the text
+    /// Field representing the text
     #[serde(skip_serializing_if = "Option::is_none", rename = "Text")]
     pub text: Option<NwValue<super::LocalizedText>>,
-    /// Optional field representing the link comment
+    /// Field representing the link comment
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkComment")]
     pub link_comment: Option<NwValue<String>>,
 }
@@ -134,16 +134,16 @@ pub struct EntryReply {
     /// Field representing the struct ID
     #[serde(rename = "__struct_id")]
     pub struct_id: u8,
-    /// Optional field representing the active state
+    /// Field representing the active state
     #[serde(skip_serializing_if = "Option::is_none", rename = "Active")]
     pub active: Option<NwValue<String>>,
-    /// Optional field representing the index
+    /// Field representing the index
     #[serde(skip_serializing_if = "Option::is_none", rename = "Index")]
     pub index: Option<NwValue<u32>>,
-    /// Optional field indicating if it is a child entry
+    /// Field indicating if it is a child entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "IsChild")]
     pub is_child: Option<NwValue<u8>>,
-    /// Optional field representing the link comment
+    /// Field representing the link comment
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkComment")]
     pub link_comment: Option<NwValue<String>>,
 }
@@ -154,16 +154,16 @@ pub struct Reply {
     /// Field representing the struct ID
     #[serde(rename = "__struct_id")]
     pub struct_id: u8,
-    /// Optional field representing the active state
+    /// Field representing the active state
     #[serde(skip_serializing_if = "Option::is_none", rename = "Active")]
     pub active: Option<NwValue<String>>,
-    /// Optional field representing the index
+    /// Field representing the index
     #[serde(skip_serializing_if = "Option::is_none", rename = "Index")]
     pub index: Option<NwValue<u32>>,
-    /// Optional field indicating if it is a child entry
+    /// Field indicating if it is a child entry
     #[serde(skip_serializing_if = "Option::is_none", rename = "IsChild")]
     pub is_child: Option<NwValue<u8>>,
-    /// Optional field representing the link comment
+    /// Field representing the link comment
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkComment")]
     pub link_comment: Option<NwValue<String>>,
 }
@@ -174,13 +174,13 @@ pub struct StartingList {
     /// Field representing the struct ID
     #[serde(rename = "__struct_id")]
     pub struct_id: u32,
-    /// Optional field representing the active state
+    /// Field representing the active state
     #[serde(skip_serializing_if = "Option::is_none", rename = "Active")]
     pub active: Option<NwValue<String>>,
-    /// Optional field representing the index
+    /// Field representing the index
     #[serde(skip_serializing_if = "Option::is_none", rename = "Index")]
     pub index: Option<NwValue<u32>>,
-    /// Optional field representing the link comment
+    /// Field representing the link comment
     #[serde(skip_serializing_if = "Option::is_none", rename = "LinkComment")]
     pub link_comment: Option<NwValue<String>>,
 }

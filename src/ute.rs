@@ -13,7 +13,7 @@ pub struct Ute {
     #[serde(skip_serializing_if = "Option::is_none", rename = "Active")]
     pub active: Option<NwValue<u8>>,
 
-    /// Optional comment for the Encounter.
+    /// Comment for the Encounter.
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
 

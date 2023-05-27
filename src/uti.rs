@@ -20,7 +20,7 @@ pub struct Uti {
     #[serde(skip_serializing_if = "Option::is_none", rename = "Charges")]
     pub charges: Option<NwValue<i32>>,
 
-    /// Optional comment for the item.
+    /// Comment for the item.
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
 

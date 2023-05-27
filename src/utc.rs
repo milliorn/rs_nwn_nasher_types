@@ -437,7 +437,7 @@ pub struct SpecialAbility {
 /// Represents a template for a specific purpose.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Template {
-    /// Optional struct ID
+    /// Struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 }
