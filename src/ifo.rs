@@ -208,45 +208,64 @@ pub struct Ifo {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Area {
+    // Struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    // Area Name
     #[serde(skip_serializing_if = "Option::is_none", rename = "Area_Name")]
     pub name: Option<NwValue<String>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NSS {
+    // Struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    // Resource Reference
     #[serde(skip_serializing_if = "Option::is_none", rename = "ResRef")]
     pub res_ref: Option<NwValue<String>>,
 }
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CutScene {}
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Expansion {}
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct GlobalVariable {}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Hak {
+    // Struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    // Hak Value
     #[serde(skip_serializing_if = "Option::is_none", rename = "Mod_Hak")]
     pub value: Option<NwValue<String>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Variable {
+    // Struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    // Variable Name
     #[serde(skip_serializing_if = "Option::is_none", rename = "Name")]
     pub name: Option<NwValue<String>>,
+
+    // Variable Type
     #[serde(skip_serializing_if = "Option::is_none", rename = "Type")]
     pub _type: Option<NwValue<u8>>,
+
+    // Variable Value
     #[serde(skip_serializing_if = "Option::is_none", rename = "Value")]
     pub value: Option<NwValue<Value>>,
 }
