@@ -92,6 +92,7 @@ pub struct AreaProperty {
     pub music_night: Option<NwValue<u32>>,
 }
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Creature {}
 
@@ -349,21 +350,27 @@ pub struct Encounter {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct EncounterCreature {
+    // The unique identifier for the struct
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 
+    // The appearance value of the creature
     #[serde(skip_serializing_if = "Option::is_none", rename = "Appearance")]
     pub appearance: Option<NwValue<u32>>,
 
+    // A comment associated with the creature
     #[serde(skip_serializing_if = "Option::is_none", rename = "Comment")]
     pub comment: Option<NwValue<String>>,
 
+    // The challenge rating of the creature
     #[serde(skip_serializing_if = "Option::is_none", rename = "CR")]
     pub challenge_rating: Option<NwValue<Decimal>>,
 
+    // The resource reference of the creature
     #[serde(skip_serializing_if = "Option::is_none", rename = "ResRef")]
     pub res_ref: Option<NwValue<String>>,
 
+    // Indicates whether the creature should be single-spawned
     #[serde(skip_serializing_if = "Option::is_none", rename = "SingleSpawn")]
     pub single_spawn: Option<NwValue<u8>>,
 }
@@ -383,6 +390,7 @@ pub struct EncounterGeometry {
     pub z: Option<NwValue<Decimal>>,
 }
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct List {}
 
@@ -557,12 +565,15 @@ pub struct Placeable {
     pub z: Option<NwValue<Decimal>>,
 }
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Sound {}
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Store {}
 
+// TODO
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Trigger {
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
