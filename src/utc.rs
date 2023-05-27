@@ -148,30 +148,55 @@ pub struct Utc {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Class {
+    /// Identifier for the struct (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
+
+    /// Class value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "Class")]
     pub class: Option<NwValue<i32>>,
+
+    /// Level value (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "ClassLevel")]
     pub level: Option<NwValue<i32>>,
+
+    /// Memorized spells for level 0 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList0")]
     pub memorized_list0: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 1 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList1")]
     pub memorized_list1: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 2 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList2")]
     pub memorized_list2: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 3 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList3")]
     pub memorized_list3: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 4 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList4")]
     pub memorized_list4: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 5 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList5")]
     pub memorized_list5: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 6 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList6")]
     pub memorized_list6: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 7 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList7")]
     pub memorized_list7: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 8 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList8")]
     pub memorized_list8: Option<NwValue<Vec<MemorizedSpell>>>,
+
+    /// Memorized spells for level 9 (optional)
     #[serde(skip_serializing_if = "Option::is_none", rename = "MemorizedList9")]
     pub memorized_list9: Option<NwValue<Vec<MemorizedSpell>>>,
 }
@@ -236,8 +261,10 @@ pub struct SpecialAbility {
     pub flags: Option<NwValue<i32>>,
 }
 
+/// Represents a template for a specific purpose.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Template {
+    /// Optional struct ID
     #[serde(skip_serializing_if = "Option::is_none", rename = "__struct_id")]
     pub struct_id: Option<u32>,
 }
