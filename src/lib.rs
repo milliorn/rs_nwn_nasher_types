@@ -159,7 +159,7 @@ pub struct NwStruct<T> {
 
 /// A struct that represents a localized string.
 /// Determined by the players's language setting.
-/// https://nwnlexicon.com/index.php?title=PLAYER_LANGUAGE
+/// <https://nwnlexicon.com/index.php?title=PLAYER_LANGUAGE>
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LocalizedText {
     #[serde(skip_serializing_if = "Option::is_none", rename = "0")]
